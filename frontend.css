@@ -1,0 +1,145 @@
+/* bron voor hamburger menu: https://codepen.io/Guilano/pen/jOOgZKE */
+
+
+div {
+    width: 10rem;
+    height: 6rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 4rem 4rem 4rem 4rem;
+}
+
+span {
+    height: 1rem;
+    width: 100%;
+    display: block;
+    background: #918C7E;
+    /* ronde hoeken middelste streepje */
+    border-radius: 10rem;
+}
+
+/* dit is het eerste streepje van het menu, deze maak je aan door ::before  (zet iets 'before' de span)
+dit is het eerste streepje van het menu, deze maak je aan door ::after (zet iets 'after' de span)*/
+span::before,
+span::after {
+    /* zonder komen de streepjes niet, waarom?*/
+    content: '';
+    /* waarom .4rem bijv? */
+    height: 1rem;
+    width: 100%;
+    /* absolute: element kan overal op de pagina geplaatst worden */
+    position: absolute;
+    background: #918C7E;
+    /* ronde hoeken streepjes */
+    border-radius: 10rem;
+    /* waarom . ? */
+    transition: 0.5s;
+}
+
+
+span::before {
+    top: 0rem;
+}
+
+span::after {
+    bottom: 0em;
+}
+
+.menu.active span {
+    /* rgba(0, 0, 0, 0), zo maak je het middelste streepje doorzichtig */
+    background: rgba(0, 0, 0, 0);
+    transition: .5s;
+}
+
+.menu.active span::before {
+    /* 135 graden (degrees) draaien, streepje 1 */
+    transform: rotate(135deg);
+    top: 20px;
+}
+
+.menu.active span::after {
+    /* 135 graden (degrees) draaien, streepje 1 */
+    transform: rotate(225deg);
+    top: 20px;
+}
+
+nav {
+    transform: translateX(-100%);
+    background: #FAF9F7;
+    margin-top: 5rem;
+    padding: 1rem .5rem;
+    border-left: 1rem #918C7E solid;
+    width: 30%;
+    transition: 0.2s;
+}
+
+nav.active {
+    transform: translateX(0);
+}
+
+ul {
+    list-style-type: none;
+    line-height: 6em;
+}
+
+a {
+    text-decoration: none;
+    font-family: aller, sans-serif;
+    color: #918C7E;
+    font-size: 4rem;
+}
+
+a:hover {
+    color: black;
+}
+
+.headerAfbeelding {
+    width: 100%;
+    border-bottom: 1rem #918C7E solid;
+}
+
+article {
+    background-color: #EEEDEB;
+    font-size: 2rem;
+    color: #918C7E;
+    margin: 2rem;
+    padding: 8rem;
+    width: 1200px;
+    border: 1rem #918C7E solid;
+
+}
+
+h2 {
+    text-align: center;
+    font-family: aller, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+footer {
+    background-color: #F3F3F2;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.footer {
+    list-style-type: none;
+}
+
+.footer1 {
+    padding: 3rem;
+}
+
+.footer2 {
+    padding: 0.1rem;
+    background-color: #918C7E;
+}
+
+.footer2 li {
+    list-style-type: none;
+}
+
+
+
